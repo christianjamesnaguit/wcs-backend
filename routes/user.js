@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const authenticateToken = require('../middleware/auth');
 const { uploadAvatar } = require('../config/multer');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 // User routes
 router.get('/', authenticateToken, async (req, res) => {
