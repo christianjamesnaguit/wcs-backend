@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: domore-backend
+    env: node
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        # IMPORTANT: Set this in Render dashboard for security
+        # Format: mongodb+srv://<username>:<password>@domoreplanner.xapwilu.mongodb.net/?appName=domoreplanner
+        sync: false
+      - key: JWT_SECRET
+        # IMPORTANT: Set this in Render dashboard for security
+        sync: false
+      - key: FRONTEND_PATH
+        value: ../frontend/dist
+      - key: NETLIFY_URL
+        # Set this after deploying to Netlify
+        sync: false
